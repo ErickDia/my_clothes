@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+/* -------- effect scroll ------------ */
+.container {
+  font-family: "Gentium Plus", serif;
+
+  overflow-x: hidden;
+  height: 100vh;
+
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+.container::-webkit-scrollbar {
+  width: 0;
+}
+section {
+  scroll-snap-align: start;
+}
+
+/* =================  NAV-BAR  ================= */
+nav {
+  /* background-color: #eeeeee; */
+  height: 10em;
+  width: 100%;
+  padding: 0 6em;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+}
+.logo-name {
+  display: flex;
+  flex-direction: column;
+
+  font-weight: normal;
+  font-size: 3em;
+  color: #2e1b13;
+}
+.categories {
+  display: flex;
+  gap: 9em;
+}
+.categories a {
+  font-size: 2.5em;
+  color: #2e1b13;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  position: relative;
+}
+.categories a::after {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: #2e1b13;
+  bottom: -5px;
+  transition: width 0.5s;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+
+.categories a:hover::after {
+  width: 100%;
+}
+
+/* =================  ANUNCIOS  ================= */
+.anuncios {
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.img_anuncio {
+  height: calc(100% - 15rem);
+  width: calc(100% - 12rem);
+  /* margin-top: -5rem; */
+  background-image: url("images/pexels-cottonbro-6650001.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  cursor: pointer;
+}
+.anuncio-name {
+  position: absolute;
+  font-size: 10rem;
+  color: #2e1b13;
+
+  top: 5rem;
+  left: 10rem;
+  font-weight: 400;
+  animation: anuncio-name 2s;
+}
+
+@keyframes anuncio-name {
+  0% {
+    color: transparent;
+  }
+  30% {
+    color: transparent;
+  }
+  100% {
+    color: #2e1b13;
+  }
+}
+
+/* =================  SECTION2  ================= */
+
+.section-para-quien {
+  height: 100vh;
+  /* background-color: rgb(164, 251, 251); */
+  display: flex;
+  justify-content: center;
+}
+
+.container-section-para-quien {
+  /* background-color: #7e7571; */
+  height: calc(100% - 5rem);
+  width: calc(100% - 12rem);
+}
+
+.title-ection-para-quien {
+  color: #2e1b13;
+  background-color: #ffffff;
+  height: 10rem;
+  width: 100%;
+  /* padding: 0 6em; */
+  font-size: 50px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+
+.section-para-quien-categories {
+  height: calc(100% - 10rem);
+  width: 100%;
+  /* background-color: #814e39; */
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.section-para-quien-category {
+  height: 100%;
+  width: 24%;
+  /* background-color: #7e7571; */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 6rem;
+
+  background-size: cover;
+  background-position: center;
+}
+
+.cathombre {
+  background-image: url(images/hombre2.jpg);
+}
+
+.catchico {
+  background-image: url(images/chico.jpg);
+}
+
+.catchica {
+  background-image: url(images/chica.jpg);
+}
+
+.catmujer {
+  background-image: url(images/mujer.jpg);
+}
+
+.section-para-quien-category button {
+  width: 100%;
+  height: 6rem;
+  font-size: 2.5rem;
+
+  font-family: "Gentium Plus", serif;
+  background-color: hsla(0, 0%, 13%, 0.9);
+  color: white;
+  border: none;
+  transition: color 0.3s, background-color 0.5s;
+}
+
+.section-para-quien-category button:hover {
+  background-color: hsla(0, 0%, 100%, 0.9);
+  color: rgb(50, 50, 50);
+  border: none;
+}
+
+/* =================  flecha flotante  ================= */
+
+.ver-mas {
+  color: #2e1b13;
+  /* background-color: aqua; */
+  width: 12rem;
+  font-size: 2.5em;
+  cursor: pointer;
+  position: fixed;
+  bottom: 7rem;
+  right: -3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ver-mas div {
+  transform: rotate(-90deg);
+  animation: ver-mas-jumping 3s infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+@keyframes ver-mas-jumping {
+  0% {
+    transform: translate(0px, 0px) rotate(-90deg);
+  }
+  15% {
+    transform: translate(0px, -7px) rotate(-90deg);
+  }
+  30% {
+    transform: translate(0px, 0px) rotate(-90deg);
+  }
+  45% {
+    transform: translate(0px, -7px) rotate(-90deg);
+  }
+  60% {
+    transform: translate(0px, -0px) rotate(-90deg);
+  }
+  100% {
+    transform: translate(0px, -0px) rotate(-90deg);
+  }
+}
