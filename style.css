@@ -8,12 +8,16 @@
 html {
   font-size: 10px;
 }
+body {
+  background-color: #d2d3d8;
+}
 /* -------- effect scroll ------------ */
 .container {
   font-family: "Gentium Plus", serif;
 
   overflow-x: hidden;
   height: 100vh;
+  padding: 0 6rem;
 
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
@@ -30,11 +34,12 @@ nav {
   /* background-color: #eeeeee; */
   height: 10em;
   width: 100%;
-  padding: 0 6em;
+  /* padding: 0 6em; */
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
 }
 
 .logo {
@@ -87,19 +92,254 @@ nav {
   align-items: center;
   flex-direction: column;
   position: relative;
+  /* background: #2e1b13; */
 }
 
 .img_anuncio {
   height: calc(100% - 15rem);
-  width: calc(100% - 12rem);
+  width: 50%;
   /* margin-top: -5rem; */
   background-image: url("images/pexels-cottonbro-6650001.jpg");
   background-size: cover;
   background-position: center;
   position: relative;
+  align-self: flex-start;
 
   cursor: pointer;
+  animation: img_anuncio 5s;
 }
+
+@keyframes img_anuncio {
+  0% {
+    width: 100%;
+  }
+  30% {
+    width: 100%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+/* -------------------------  fotos de bolsos  ------------------------- */
+
+.bag {
+  position: absolute;
+  height: 40%;
+}
+.bag1 {
+  right: 2rem;
+  top: 5rem;
+  transform: translate(0px, 0px) rotate(-15deg);
+}
+.anim1 {
+  animation: bag1 6.5s;
+}
+
+@keyframes bag1 {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    transform: translate(50px, 0) rotate(-15deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(-15deg);
+    opacity: 100;
+  }
+}
+
+.btn-bag {
+  padding: 0 6rem;
+  height: 6rem;
+  font-size: 2.5rem;
+
+  font-family: "Gentium Plus", serif;
+  background-color: hsla(0, 0%, 13%, 0.9);
+  color: white;
+  border: none;
+  transition: color 0.3s, background-color 0.5s;
+
+  z-index: 1;
+
+  position: absolute;
+}
+.s1 {
+  padding: 0 6rem;
+  height: 6rem;
+  font-size: 2.5rem;
+  border: none;
+  z-index: 2;
+  opacity: 0;
+  position: absolute;
+  right: 28%;
+  top: 20rem;
+}
+
+.disable {
+  display: none;
+}
+
+.btn-bag:hover {
+  background-color: hsla(0, 0%, 100%, 0.9);
+  color: rgb(50, 50, 50);
+  border: none;
+}
+.btn-bag1 {
+  right: 28%;
+  top: 20rem;
+  animation: btn-bag 6.5s;
+}
+@keyframes btn-bag {
+  0% {
+    /* z-index: -1; */
+    /* visibility: hidden; */
+    opacity: 0;
+  }
+  70% {
+    /* visibility: visible; */
+    /* z-index: 1; */
+    opacity: 0;
+  }
+  100% {
+    /* z-index: 1; */
+    /* display: flex; */
+    opacity: 100;
+  }
+}
+
+.anuncios .btn-bag1:hover ~ .bag1 {
+  transition: transform 1s;
+}
+.anuncios .btn-bag1:hover ~ .bag1 {
+  animation: btnhover 2s infinite;
+  transition: transform 0.5s;
+}
+@keyframes btnhover {
+  0% {
+    transform: scale(1) rotate(-15deg);
+  }
+  50% {
+    transform: scale(1.05) rotate(-15deg);
+  }
+  100% {
+    transform: scale(1) rotate(-15deg);
+  }
+}
+
+.bag2 {
+  right: 20%;
+  /* left: 50%; */
+  top: 30%;
+  transform: translate(0px, 0px) rotate(15deg);
+}
+.anim2 {
+  animation: bag2 7s;
+}
+
+@keyframes bag2 {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    transform: translate(-50px, 0) rotate(15deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(15deg);
+    opacity: 100;
+  }
+}
+.btn-bag2 {
+  right: 5%;
+  top: 50%;
+  animation: btn-bag 7s;
+}
+
+.s2 {
+  padding: 0 6rem;
+  height: 6rem;
+  font-size: 2.5rem;
+  border: none;
+  z-index: 2;
+  opacity: 0;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+}
+
+.anuncios .btn-bag2:hover ~ .bag2 {
+  transition: transform 1s;
+}
+.anuncios .btn-bag2:hover ~ .bag2 {
+  animation: btnhover2 2s infinite;
+  transition: transform 0.5s;
+}
+
+@keyframes btnhover2 {
+  0% {
+    transform: scale(1) rotate(15deg);
+  }
+  50% {
+    transform: scale(1.05) rotate(15deg);
+  }
+  100% {
+    transform: scale(1) rotate(15deg);
+  }
+}
+
+.bag3 {
+  right: 2rem;
+  bottom: 7%;
+  transform: translate(0px, 0px) rotate(-15deg);
+}
+.anim3 {
+  animation: bag3 7.5s;
+}
+
+@keyframes bag3 {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    transform: translate(50px, 0) rotate(-15deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(-15deg);
+    opacity: 100;
+  }
+}
+
+.btn-bag3 {
+  right: 28%;
+  bottom: 15%;
+  animation: btn-bag 7s;
+}
+
+.s3 {
+  padding: 0 6rem;
+  height: 6rem;
+  font-size: 2.5rem;
+  border: none;
+  z-index: 2;
+  opacity: 0;
+  position: absolute;
+  right: 28%;
+  bottom: 15%;
+}
+
+.anuncios .btn-bag3:hover ~ .bag3 {
+  transition: transform 1s;
+}
+.anuncios .btn-bag3:hover ~ .bag3 {
+  animation: btnhover 2s infinite;
+  transition: transform 0.5s;
+}
+
+/* fin de fotos de bolsos */
+
 .anuncio-name {
   position: absolute;
   font-size: 10rem;
@@ -135,12 +375,12 @@ nav {
 .container-section-para-quien {
   /* background-color: #7e7571; */
   height: calc(100% - 5rem);
-  width: calc(100% - 12rem);
+  width: 100%;
 }
 
 .title-ection-para-quien {
   color: #2e1b13;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   height: 10rem;
   width: 100%;
   /* padding: 0 6em; */
